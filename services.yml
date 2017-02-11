@@ -1,0 +1,38 @@
+---
+ReservedPorts:
+    - Service: 'nginx'
+      Port: 80
+    - Service: 'apache'
+      Port: 8080
+
+Services:
+    - Name: gitlab
+      Enabled: true
+      Ports:
+          - 9080
+          - 443
+          - 9022
+
+    - Name: gitlab-ci-runner
+      Enabled: true
+
+    - Name: jenkins
+      Enabled: true
+      Ports:
+          - 8081
+          - 50000
+
+    - Name: pagekit
+      Enabled: false
+      Ports:
+          - 8001
+
+    - Name: grafana
+      Enabled: false
+      Ports:
+          - 8002
+
+    - Name: rancher-server
+      Enabled: true
+      Ports:
+          - 8088
